@@ -1,4 +1,4 @@
-![screenshot](https://github.com/veecthorpaul/newflix/read.png)
+![screenshot](https://github.com/Veecthorpaul/newflix/blob/master/read.png)
 
 
 # Laravel Movies Project using TMDB APi
