@@ -46,7 +46,7 @@ class ActorViewModel extends ViewModel
     {
         $castMovies = collect($this->credits)->get('cast');
 
-        return collect($castMovies)->sortByDesc('popularity')->take(5)->map(function($movie) {
+        return collect($castMovies)->sortByDesc('popularity')->take(6)->map(function($movie) {
             if (isset($movie['title'])) {
                 $title = $movie['title'];
             } elseif (isset($movie['name'])) {

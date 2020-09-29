@@ -1,61 +1,66 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="container mx-auto px-4 py-16">
-        <div class="popular-actors">
-            <h2 class="uppercase tracking-wider text-orange-500 text-lg font-semibold">Popular Actors</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                @foreach ($popularActors as $actor)
-                    <div class="actor mt-8">
-                        <a href="{{ route('actors.show', $actor['id']) }}">
-                            <img src="{{ $actor['profile_path'] }}" alt="profile image" class="hover:opacity-75 transition ease-in-out duration-150">
-                        </a>
-                        <div class="mt-2">
-                            <a href="{{ route('actors.show', $actor['id']) }}" class="text-lg hover:text-gray-300">{{ $actor['name'] }}</a>
-                            <div class="text-sm truncate text-gray-400">{{ $actor['known_for'] }}</div>
-                        </div>
+
+	<!-- home -->
+	<section class="home">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 mb-4">
+					<h2 class="content__title">Popular Actors</h2>
+				</div>
+				
+				<div class="row">
+                    <!-- card -->
+                    @foreach ($popularActors as $actor)
+					<div class="col-6 col-sm-4 col-md-3 col-xl-2">
+						<div class="card">
+							<div class="card__cover">
+                                <a href="{{ route('actors.show', $actor['id']) }}">
+                                    <img src="{{ $actor['profile_path'] }}" alt="profile image">
+                                </a>
+							</div>
+							<div class="card__content">
+                                <h3 class="card__title"><a href="{{ route('actors.show', $actor['id']) }}">{{ $actor['name'] }}</a></h3>
+								<span class="card__category" style="color: #ffd80e">
+                                    {{ $actor['known_for'] }}
+								</span>
+							</div>
+						</div>
                     </div>
-                @endforeach
-
-            </div>
-        </div> <!-- end popular-actors -->
-
-        <div class="page-load-status my-8">
-            <div class="flex justify-center">
-                <div class="infinite-scroll-request spinner my-8 text-4xl">&nbsp;</div>
-            </div>
-            <p class="infinite-scroll-last">End of content</p>
-            <p class="infinite-scroll-error">Error</p>
-        </div>
-
-
-        {{-- <div class="flex justify-between mt-16">
+                    @endforeach
+					<!-- end card -->
+                </div>
+                  <div style=" justify-content: space-between;">
             @if ($previous)
-                <a href="/actors/page/{{ $previous }}">Previous</a>
+                <a href="/actors/page/{{ $previous }}" style="color: white">Previous</a>
             @else
                 <div></div>
             @endif
-
 
             @if ($next)
-                <a href="/actors/page/{{ $next }}">Next</a>
+                <a href="/actors/page/{{ $next }}" style="color: white">Next</a>
             @else
                 <div></div>
             @endif
 
-        </div> --}}
-    </div>
+        </div>
+            </div>
+		</div>
+	</section>
+	<!-- end home -->
+
 @endsection
 
 @section('scripts')
 <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
 <script>
-    var elem = document.querySelector('.grid');
+    var elem = document.querySelector('.row');
     var infScroll = new InfiniteScroll( elem, {
       path: '/actors/page/@{{#}}',
       append: '.actor',
       status: '.page-load-status',
-      // history: false,
+    //   history: false,
     });
 
 </script>

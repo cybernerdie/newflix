@@ -37,7 +37,7 @@ class MoviesViewModel extends ViewModel
 
     private function formatMovies($movies)
     {
-        return collect($movies)->map(function($movie) {
+        return collect($movies)->take(18)->map(function($movie) {
             $genresFormatted = collect($movie['genre_ids'])->mapWithKeys(function($value) {
                 return [$value => $this->genres()->get($value)];
             })->implode(', ');

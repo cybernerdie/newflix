@@ -4,13 +4,16 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
-
+ 
 class SearchDropdown extends Component
 {
     public $search = '';
 
+
     public function render()
     {
+        sleep(2);
+        
         $searchResults = [];
 
         if (strlen($this->search) >= 2) {

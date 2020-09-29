@@ -18,7 +18,7 @@ class ActorsViewModel extends ViewModel
 
     public function popularActors()
     {
-        return collect($this->popularActors)->map(function($actor) {
+        return collect($this->popularActors)->take(18)->map(function($actor) {
             return collect($actor)->merge([
                 'profile_path' => $actor['profile_path']
                     ? 'https://image.tmdb.org/t/p/w235_and_h235_face'.$actor['profile_path']
