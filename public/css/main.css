@@ -1750,12 +1750,15 @@ background-color: grey;
   text-decoration: none;
   background-color: transparent;
   padding: 10px;
-  background: yellow;
+  background: #FFD700;
   border-radius: 5px;
   width: 25vh;
   text-align: center;
 }
 
+.trailer:hover{
+  background: #F0E68C;
+}
 
 .card__description {
   display: block;
