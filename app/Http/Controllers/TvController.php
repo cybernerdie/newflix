@@ -19,6 +19,14 @@ class TvController extends Controller
         $popularTv = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/tv/popular')
             ->json()['results'];
+            
+            $airingTv = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/tv/airing_today')
+            ->json()['results'];
+
+            $onairTv = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/tv/on_the_air')
+            ->json()['results'];
 
         $topRatedTv = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/tv/top_rated')
@@ -30,6 +38,8 @@ class TvController extends Controller
 
         $viewModel = new TvViewModel(
             $popularTv,
+            $airingTv,
+            $onairTv,
             $topRatedTv,
             $genres
         );
