@@ -81,28 +81,30 @@
 				<h2 class="content__title">Casts</h2>
 			</div>
 			
-			<div class="row">
-                <!-- card -->
-                @foreach ($movie['cast'] as $cast)
-				<div class="col-6 col-sm-4 col-md-3 col-xl-2">
-					<div class="card">
-						<div class="card__cover">
-                            <a href="{{ route('actors.show', $cast['id']) }}">
-                                <img src="{{ $cast['profile_path'] }}" alt="actor">
-                            </a>
-						</div>
-						<div class="card__content">
-                            <h3 class="card__title"> <a href="{{ route('actors.show', $cast['id']) }}">{{ $cast['name'] }}</a></h3>
-                           
-							<span class="card__category" style="color: #ffd80e">
-								{{ $cast['character'] }}
-							</span>
-						</div>
-					</div>
+			<div class="container">
+                <div class="row">
+                    <!-- card -->
+                    @foreach ($movie['cast'] as $cast)
+                    <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                        <div class="card">
+                            <div class="card__cover">
+                                <a href="{{ route('actors.show', $cast['id']) }}">
+                                    <img src="{{ $cast['profile_path'] }}" alt="actor">
+                                </a>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title"> <a href="{{ route('actors.show', $cast['id']) }}">{{ $cast['name'] }}</a></h3>
+                               
+                                <span class="card__category" style="color: #ffd80e">
+                                    {{ $cast['character'] }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    <!-- end card -->
                 </div>
-                @endforeach
-				<!-- end card -->
-			</div>
+            </div>
 		</div>
 	</div>
 
