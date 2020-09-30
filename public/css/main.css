@@ -1502,7 +1502,7 @@ background-color: grey;
 .card__cover img {
   width: 100%;
 }
-.card__cover:before {
+/* .card__cover:before {
   content: '';
   position: absolute;
   display: block;
@@ -1516,7 +1516,7 @@ background-color: grey;
   -webkit-transition: 0.4s ease;
   -moz-transition: 0.4s ease;
   transition: 0.4s ease;
-}
+} */
 .card__cover:hover:before {
   opacity: 1;
 }
