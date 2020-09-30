@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="{{asset('css\main.css')}}">
 	<!-- Favicons -->
 <link rel="icon" type="image/png" href="{{asset('img\logo.png')}}" sizes="32x32">
-<link rel="apple-touch-icon" {{asset('img\logo.png')}}">
+<link rel="apple-touch-icon" href="{{asset('img\logo.png')}}">
 
 	<meta name="description" content="">
 	<meta name="keywords" content="">
