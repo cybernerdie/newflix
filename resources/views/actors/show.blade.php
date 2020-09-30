@@ -83,10 +83,16 @@
                                     <br>
                                     <div class="row">
                                         @foreach ($knownForMovies as $movie)
-                                        <div class="col-12 col-lg-2 col-sm-4 mb-4">
-                                            <div class="card__cover">
-                                                <div><a href="{{ $movie['linkToPage'] }}"><img src="{{ $movie['poster_path'] }}" alt="" style="width: 100%"></a></div>
-                                           <div> <a href="{{ $movie['linkToPage'] }}" style="color: white;" class="mt-3">{{ $movie['title'] }}</a></div>
+                                     <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                                            <div class="card">
+                                                <div class="card__cover">
+                                                    <a href="{{ $movie['linkToPage'] }}"><img src="{{ $movie['poster_path'] }}" alt="" style="width: 100%"></a>
+                                                </div>
+                                                <div class="card__content">
+                                                    <span class="card__category" >
+                                                        <a href="{{ $movie['linkToPage'] }}" style="color: #ffd80e">{{ $movie['title'] }}</a>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                           @endforeach
