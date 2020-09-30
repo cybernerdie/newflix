@@ -114,19 +114,21 @@
 				<h2 class="content__title">Images</h2>
 			</div>
 			<!-- project gallery -->
-			<div class="gallery" itemscope="">
-				<div class="row">
-                    <!-- gallery item -->
-                    @foreach ($movie['images'] as $image)
-					<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope="">
-						<a href="{{ 'https://image.tmdb.org/t/p/w500/'.$image['file_path'] }}" itemprop="contentUrl" data-size="1920x1280">
-							<img src="{{ 'https://image.tmdb.org/t/p/w500/'.$image['file_path'] }}" itemprop="thumbnail" alt="Image">
-                        </a>
-                    </figure>
-                    @endforeach
-					<!-- end gallery item -->
-				</div>
-			</div>
+				<div class="container">
+                <div class="gallery" itemscope="">
+                    <div class="row">
+                        <!-- gallery item -->
+                        @foreach ($movie['images'] as $image)
+                        <figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope="">
+                            <a href="{{ 'https://image.tmdb.org/t/p/w500/'.$image['file_path'] }}" itemprop="contentUrl" data-size="1920x1280">
+                                <img src="{{ 'https://image.tmdb.org/t/p/w500/'.$image['file_path'] }}" itemprop="thumbnail" alt="Image">
+                            </a>
+                        </figure>
+                        @endforeach
+                        <!-- end gallery item -->
+                    </div>
+                </div>
+            </div>
 			<!-- end project gallery -->
 		</div>
 	</div>
