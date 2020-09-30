@@ -9,6 +9,7 @@
                 <h2 class="content__title" style="color: #ffd80e">Popular Movies</h2>
             </div>
             
+        <div class="container">
             <div class="row">
                 <!-- card -->
                 @foreach ($popularMovies as $movie)
@@ -33,6 +34,7 @@
                 @endforeach
                 <!-- end card -->
             </div>
+           </div>
         </div>
     </div>
 </section>
