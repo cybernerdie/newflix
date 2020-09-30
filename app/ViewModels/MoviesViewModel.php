@@ -7,15 +7,29 @@ use Spatie\ViewModels\ViewModel;
 
 class MoviesViewModel extends ViewModel
 {
+    public $upcomingMovies;
+    public $topMovies;
     public $popularMovies;
     public $nowPlayingMovies;
     public $genres;
 
-    public function __construct($popularMovies, $nowPlayingMovies, $genres)
+    public function __construct($upcomingMovies, $topMovies, $popularMovies, $nowPlayingMovies, $genres)
     {
+        $this->upcomingMovies = $upcomingMovies;
+        $this->topMovies = $topMovies;
         $this->popularMovies = $popularMovies;
         $this->nowPlayingMovies = $nowPlayingMovies;
         $this->genres = $genres;
+    }
+
+    public function upcomingMovies()
+    {
+        return $this->formatMovies($this->upcomingMovies);
+    }
+
+    public function topMovies()
+    {
+        return $this->formatMovies($this->topMovies);
     }
 
     public function popularMovies()
