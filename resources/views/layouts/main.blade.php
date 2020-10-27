@@ -91,7 +91,7 @@
 					<img src="{{asset('img\logo.png')}}" alt="" style="width: 50%">
 					</a>
 
-					<span class="footer__copyright">© 2020 NewFlix<br> Developed by <a href="https://github.com/Veecthorpaul" target="_blank">Joshua Paul</a></span>
+					<span class="footer__copyright">© 2020 NewFlix<br> Developed by <a href="https://github.com/Veecthorpaul/newflix" target="_blank">Joshua Paul</a></span>
 
 					<button class="footer__back" type="button">
 						<i class="icon ion-ios-arrow-round-up"></i>
