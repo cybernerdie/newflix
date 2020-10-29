@@ -61,9 +61,11 @@
                                      
                                     </div>
                                 </div>
+                                 @if ($tvshow['videos'])
                                 <div class="mt-4 trailer">
                                     <a href="https://www.youtube.com/embed/{{ $tvshow['videos']['results'][0]['key'] }}" style="color: black"><strong><i class="fa fa-play-circle-o mr-2"></i>Play Trailer</strong></a>
                                 </div>
+                                @endif
                             </div>
                            
                             <!-- end card content -->
